@@ -1,21 +1,32 @@
 const getState = ({ getStore, getActions, setStore }) => {
 	return {
 		store: {
-			message: null,
-			demo: [
-				{
-					title: "FIRST",
-					background: "white",
-					initial: "white"
-				},
-				{
-					title: "SECOND",
-					background: "white",
-					initial: "white"
-				}
-			]
+			dogs: [],
+			favorites: []
+
 		},
 		actions: {
+			addfavorites: (name) =>{
+				let favorites= getStore().favorites
+				favorites.push(name)
+				setStore({favorites:favorites})
+			},
+			deletefavorites: (index) =>{
+				let favorites= getStore().favorites
+				let filteredFavorites= favorites.filter((item,idx)=>idx != index)
+				setStore({favorites:filteredFavorites})
+			},
+			fetchDogs: () =>{
+				fetch("https://dogapi.dog/api/v2/breeds")
+				.then((response)=> response.json())
+				.then((data)=> {
+					console.log(data)
+					setStore({dogs:data.data})
+				})
+				.catch((error)=>{console.log(error)})
+			},
+
+			
 			// Use getActions to call a function within a fuction
 			exampleFunction: () => {
 				getActions().changeColor(0, "green");
