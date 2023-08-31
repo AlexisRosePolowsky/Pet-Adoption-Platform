@@ -10,13 +10,13 @@ const DogCard=(props)=>{
             <img src={`https://dogapi.dog/api/v2/breeds${props.id + 1}.jpg`} className="card-img-top" alt=""/>
             <div className="card-body">
                 <h5 className="card-title">{attributes.name}</h5>
-                <p className="card-text">Life: {attributes.life.min}-{attributes.life.max}</p>
+                <p className="card-text">Life: {attributes.life.min}-{attributes.life.max}years</p>
                 <p className="card-text">Male Weight: {attributes.male_weight.min}-{attributes.male_weight.max}lbs</p>
                 <p className="card-text">Female Weight: {attributes.female_weight.min}-{attributes.female_weight.max}lbs</p>
                 <Link to={"/about/dogs/"+ props.id}>
                     <span className="btn btn-primary">Learn More!</span>
                 </Link>
-                <button className="btn btn-secondary" onClick={() => actions.addfavorites(attributes.name)}>Fav </button>
+                <button className="btn btn-secondary" onClick={() => actions.addfavorites(attributes.name)}>Add to Cart</button>
             </div>
         </div>
     )

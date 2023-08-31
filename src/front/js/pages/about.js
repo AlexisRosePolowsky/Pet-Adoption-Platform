@@ -23,7 +23,6 @@ const About =() =>{
                     <p>Male Weight: {item.attributes.male_weight.min}-{item.attributes.male_weight.max}lbs</p>
                     <p>Female Weight: {item.attributes.female_weight.min}-{item.attributes.female_weight.max}lbs</p>
                     <p>Hypoallergenic: {item.attributes.hypoallergenic}</p>
-                    <p>Relationships: {item.attributes.relationships}</p>
                 </div>
             </div>
     }
