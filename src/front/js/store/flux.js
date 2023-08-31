@@ -2,19 +2,19 @@ const getState = ({ getStore, getActions, setStore }) => {
 	return {
 		store: {
 			dogs: [],
-			favorites: []
+			cart: []
 
 		},
 		actions: {
-			addfavorites: (name) =>{
-				let favorites= getStore().favorites
-				favorites.push(name)
-				setStore({favorites:favorites})
+			addtocart: (name) =>{
+				let cart= getStore().cart
+				cart.push(name)
+				setStore({cart:cart})
 			},
-			deletefavorites: (index) =>{
-				let favorites= getStore().favorites
-				let filteredFavorites= favorites.filter((item,idx)=>idx != index)
-				setStore({favorites:filteredFavorites})
+			deletefromcart: (index) =>{
+				let cart= getStore().cart
+				let filteredCart= cart.filter((item,idx)=>idx != index)
+				setStore({cart:filteredCart})
 			},
 			fetchDogs: () =>{
 				fetch("https://dogapi.dog/api/v2/breeds")

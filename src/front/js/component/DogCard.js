@@ -16,7 +16,7 @@ const DogCard=(props)=>{
                 <Link to={"/about/dogs/"+ props.id}>
                     <span className="btn btn-primary">Learn More!</span>
                 </Link>
-                <button className="btn btn-secondary" onClick={() => actions.addfavorites(attributes.name)}>Add to Cart</button>
+                <button className="btn btn-secondary" onClick={() => actions.addtocart(attributes.name)}>Add to Cart</button>
             </div>
         </div>
     )

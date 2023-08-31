@@ -8,7 +8,7 @@ export const Home = () => {
 	console.log(store)
 	return (
 		<div className="text-center mt-5 homeContainer" >
-			<p>Dogs</p>
+			<p>Your new companion awaits!</p>
 			<div className="cardContainer">
 				{
 					store.dogs.map((dogs,index)=>{

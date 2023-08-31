@@ -22,7 +22,8 @@ const About =() =>{
                     <p>Life: {item.attributes.life.min}-{item.attributes.life.max}years</p>
                     <p>Male Weight: {item.attributes.male_weight.min}-{item.attributes.male_weight.max}lbs</p>
                     <p>Female Weight: {item.attributes.female_weight.min}-{item.attributes.female_weight.max}lbs</p>
-                    <p>Hypoallergenic: {item.attributes.hypoallergenic}</p>
+                    <p>Hypoallergenic: {item.attributes.hypoallergenic.toString()}</p>
+            
                 </div>
             </div>
     }
