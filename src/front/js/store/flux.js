@@ -2,6 +2,8 @@ const getState = ({ getStore, getActions, setStore }) => {
 	return {
 		store: {
 			dogs: [],
+			dogs2: [],
+			dogs3: [],
 			cart: []
 
 		},
@@ -22,6 +24,24 @@ const getState = ({ getStore, getActions, setStore }) => {
 				.then((data)=> {
 					console.log(data)
 					setStore({dogs:data.data})
+				})
+				.catch((error)=>{console.log(error)})
+			},
+			fetchDogs2: () =>{
+				fetch("https://dogapi.dog/api/v2/breeds?page[number]=2&pages=2")
+				.then((response)=> response.json())
+				.then((data)=> {
+					console.log(data)
+					setStore({dogs2:data.data})
+				})
+				.catch((error)=>{console.log(error)})
+			},
+			fetchDogs3: () =>{
+				fetch("https://dogapi.dog/api/v2/breeds?page[number]=3&pages=3")
+				.then((response)=> response.json())
+				.then((data)=> {
+					console.log(data)
+					setStore({dogs3:data.data})
 				})
 				.catch((error)=>{console.log(error)})
 			},

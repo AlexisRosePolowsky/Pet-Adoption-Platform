@@ -18,6 +18,24 @@ export const Home = () => {
 					})
 				}
 			</div>
+			<div className="cardContainer">
+				{
+					store.dogs2.map((dogs,index)=>{
+						return(
+							<DogCard key={index} dogs={dogs} id={index}/>
+						)
+					})
+				}
+			</div>
+			<div className="cardContainer">
+				{
+					store.dogs3.map((dogs,index)=>{
+						return(
+							<DogCard key={index} dogs={dogs} id={index}/>
+						)
+					})
+				}
+			</div>
 
 		</div>
 
