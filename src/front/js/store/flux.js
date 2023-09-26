@@ -1,9 +1,10 @@
+import data from "./data";
 const getState = ({ getStore, getActions, setStore }) => {
 	return {
 		store: {
-			dogs: [],
-			dogs2: [],
-			dogs3: [],
+			dogs: data.dogInfo1,
+			dogs2: data.dogInfo2,
+			dogs3: data.dogInfo3,
 			cart: []
 
 		},
@@ -18,33 +19,33 @@ const getState = ({ getStore, getActions, setStore }) => {
 				let filteredCart= cart.filter((item,idx)=>idx != index)
 				setStore({cart:filteredCart})
 			},
-			fetchDogs: () =>{
-				fetch("https://dogapi.dog/api/v2/breeds")
-				.then((response)=> response.json())
-				.then((data)=> {
-					console.log(data)
-					setStore({dogs:data.data})
-				})
-				.catch((error)=>{console.log(error)})
-			},
-			fetchDogs2: () =>{
-				fetch("https://dogapi.dog/api/v2/breeds?page[number]=2&pages=2")
-				.then((response)=> response.json())
-				.then((data)=> {
-					console.log(data)
-					setStore({dogs2:data.data})
-				})
-				.catch((error)=>{console.log(error)})
-			},
-			fetchDogs3: () =>{
-				fetch("https://dogapi.dog/api/v2/breeds?page[number]=3&pages=3")
-				.then((response)=> response.json())
-				.then((data)=> {
-					console.log(data)
-					setStore({dogs3:data.data})
-				})
-				.catch((error)=>{console.log(error)})
-			},
+			// fetchDogs: () =>{
+			// 	fetch("https://dogapi.dog/api/v2/breeds")
+			// 	.then((response)=> response.json())
+			// 	.then((data)=> {
+			// 		console.log(data)
+			// 		setStore({dogs:data.data})
+			// 	})
+			// 	.catch((error)=>{console.log(error)})
+			// },
+			// fetchDogs2: () =>{
+			// 	fetch("https://dogapi.dog/api/v2/breeds?page[number]=2&pages=2")
+			// 	.then((response)=> response.json())
+			// 	.then((data)=> {
+			// 		console.log(data)
+			// 		setStore({dogs2:data.data})
+			// 	})
+			// 	.catch((error)=>{console.log(error)})
+			// },
+			// fetchDogs3: () =>{
+			// 	fetch("https://dogapi.dog/api/v2/breeds?page[number]=3&pages=3")
+			// 	.then((response)=> response.json())
+			// 	.then((data)=> {
+			// 		console.log(data)
+			// 		setStore({dogs3:data.data})
+			// 	})
+			// 	.catch((error)=>{console.log(error)})
+			// },
 
 			
 			// Use getActions to call a function within a fuction

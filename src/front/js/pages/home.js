@@ -11,27 +11,27 @@ export const Home = () => {
 			<p>Your new companion awaits!</p>
 			<div className="cardContainer">
 				{
-					store.dogs.map((dogs,index)=>{
+					store.dogs.map((dog,index)=>{
 						return(
-							<DogCard key={index} dogs={dogs} id={index}/>
+							<DogCard key={index} dog={dog} id={index} type={"dogs"}/>
 						)
 					})
 				}
 			</div>
 			<div className="cardContainer">
 				{
-					store.dogs2.map((dogs,index)=>{
+					store.dogs2.map((dog,index)=>{
 						return(
-							<DogCard key={index} dogs={dogs} id={index}/>
+							<DogCard key={index} dog={dog} id={index} type={"dogs2"}/>
 						)
 					})
 				}
 			</div>
 			<div className="cardContainer">
 				{
-					store.dogs3.map((dogs,index)=>{
+					store.dogs3.map((dog,index)=>{
 						return(
-							<DogCard key={index} dogs={dogs} id={index}/>
+							<DogCard key={index} dog={dog} id={index} type={"dogs3"}/>
 						)
 					})
 				}
