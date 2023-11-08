@@ -10,6 +10,13 @@
  
 }
 
+.blogContainer{
+    display: flex;
+    justify-content: center;
+    --bs-gutter-x: 0rem!important;
+
+}
+
 .card{
     box-sizing: border-box;         /*must have*/
     display:inline-block;           /*must have*/
@@ -44,4 +51,12 @@
     justify-content: center;
     gap: 1rem;
     flex-wrap: wrap;
+}
+
+.learnMoreContainer{
+    display: flex;
+    justify-content: center;
+    --bs-gutter-x: 0rem!important;
+
+
 }

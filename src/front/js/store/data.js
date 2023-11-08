@@ -205,7 +205,7 @@ const data =
             "des":"The Saluki is a graceful and elegant breed, originating in the Middle East. They are a sight hound, and have a long, sleek coat in a variety of colors. They are highly intelligent, and have an independent nature. They are a fast breed, and have a long stride, and can be used for racing and coursing. They are loyal and devoted to their family, and make good companions."
         },
         {
-            "name":"German Shepherd Dog",
+            "name":"German Shepherd",
             "life":{"min":9, "max":13},
             "maleWeight": {"min":30, "max":40},
             "femaleWeight": {"min":22, "max":32},

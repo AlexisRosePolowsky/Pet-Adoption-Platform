@@ -10,6 +10,11 @@ export const Navbar = () => {
 				<Link to="/">
 					<span className="navbar-brand mb-0 h1">Pawsitive Adoptions</span>
 				</Link>
+
+				<Link class="btn btn-secondary" to="/learnMore/:type/:id" >
+					Educational Videos & Blogs
+				</Link>
+
 				<div className="ml-auto">
 					<div class="dropdown">
 						<button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
