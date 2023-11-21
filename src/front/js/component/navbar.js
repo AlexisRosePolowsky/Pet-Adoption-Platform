@@ -15,6 +15,14 @@ export const Navbar = () => {
 					Educational Videos & Blogs
 				</Link>
 
+				<Link class="btn btn-secondary" to="/login" >
+					Login
+				</Link>
+
+				<Link class="btn btn-secondary" to="/signup" >
+					Signup
+				</Link>
+
 				<div className="ml-auto">
 					<div class="dropdown">
 						<button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">

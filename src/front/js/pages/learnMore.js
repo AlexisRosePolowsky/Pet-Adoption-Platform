@@ -4,6 +4,10 @@ import "../../styles/home.css";
 
 export const LearnMore = () => {
 	const { store, actions } = useContext(Context);
+    const links=["https://www.pawlicy.com/blog/pet-care/","https://www.adoptapet.com/","https://www.gopetfriendly.com/blog/",
+    "https://www.gopetfriendly.com/blog/","https://www.dogingtonpost.com/", "https://www.dogster.com/", "https://www.handicappedpets.com/blog/",
+    "https://www.freshpet.com/", "https://petkeen.com/","https://ohmydogblog.com/","https://www.mypawsitivelypets.com/","https://pangopets.com/"
+    ]
 	console.log(store)
 	return (
 		<div className="mt-5 learnMoreContainer1" >
@@ -30,19 +34,11 @@ export const LearnMore = () => {
                 <h3 className="justify-content-center d-flex">For More Information Here Are Some Blog Links:</h3>
                 
                 <ul className="blogContainer row d-flex justify-content-center">
-                <li><a target="_blank" href="https://www.pawlicy.com/blog/pet-care/">https://www.pawlicy.com/blog/pet-care/</a></li>
-                <li><a target="_blank" href=" https://www.adoptapet.com/"> https://www.adoptapet.com/</a></li>
-                <li><a target="_blank" href="https://www.gopetfriendly.com/blog/">https://www.gopetfriendly.com/blog/</a></li>
-                <li><a target="_blank" href="https://www.gopetfriendly.com/blog/">https://www.gopetfriendly.com/blog/</a></li>
-                <li><a target="_blank" href="https://www.dogingtonpost.com/">https://www.dogingtonpost.com/</a></li>
-                <li><a target="_blank" href="https://www.dogster.com/">https://www.dogster.com/</a></li>
-                <li><a target="_blank" href="https://www.handicappedpets.com/blog/">https://www.handicappedpets.com/blog/</a></li>
-                <li><a target="_blank" href="https://www.freshpet.com/">https://www.freshpet.com/</a></li>
-                <li><a target="_blank" href="https://petkeen.com/">https://petkeen.com/</a></li>
-                <li><a target="_blank" href="https://ohmydogblog.com/">https://ohmydogblog.com/</a></li>
-                <li><a target="_blank" href="https://www.mypawsitivelypets.com/">https://www.mypawsitivelypets.com/</a></li>
-                <li><a target="_blank" href="https://pangopets.com/">https://pangopets.com/</a></li>
+                {links.map((link)=>{
+                    return <li><a target="_blank" href={link}>{link}</a></li>
                 
+                })}
+            
                 
                 </ul>
             </div>

@@ -52,7 +52,77 @@ const getState = ({ getStore, getActions, setStore }) => {
 			exampleFunction: () => {
 				getActions().changeColor(0, "green");
 			},
+			logout: () => {
+				//const cf_url = getStore().cf_url
+				const token = sessionStorage.removeItem("token");
+				setStore({ token: null });
+				return new Promise((resolve, reject) => {
+					if (!getStore().token) resolve()
+					else reject()
+				})
+			},
 
+			createUser: async (username, email, password) => {
+				const opts = {
+					method: "POST",
+					headers: { "Content-Type": "application/json" },
+					body: JSON.stringify({
+						username: username,
+						email: email,
+						password: password,
+
+					})
+				};
+				try {
+					console.log(process.env.BACKEND_URL + "/signup");
+					const result = await fetch(process.env.BACKEND_URL + "/api/signup", opts)
+					//const data = await result.json() // unexpected end of JSON is coming from here.
+					//setStore({ user: data })
+					console.log(result);
+					return true
+
+				} catch (error) {
+					console.log("signup error here!", error)
+				}
+
+			},
+
+			login: async (email, password) => {
+				console.log(email, password);
+				const opts = {
+					method: "POST",
+					headers: {
+						"Content-Type": "application/json",
+					},
+					body: JSON.stringify({
+						email: email,
+						password: password,
+					}),
+				};
+				const res = await fetch(process.env.BACKEND_URL + "/api/login", opts);
+				if (res.status < 200 || res.status >= 300) {
+					throw new Error("There was an error signing in");
+				}
+				const data = await res.json();
+
+				sessionStorage.setItem("token", data.token);
+				console.log(data.token)
+
+				// data.favorites.forEach(f => {
+				//   //was returning an error bc it didnt like the single quotes so the line below turns the single into double quotes 
+				//   f.item = f.item.replace(/'/g, '"')
+				//   f.item = JSON.parse(f.item)
+				// })
+				console.log("USER INFO HERE", data)
+				setStore({
+					token: data.token,
+					// These aren't on the response from the login
+					// So you can either change the backend to send the user data
+					// along with the token, or change this to make a second request for this data.
+					
+				});
+				return true;
+			},
 			getMessage: async () => {
 				try{
 					// fetching data from the backend

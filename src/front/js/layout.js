@@ -7,6 +7,9 @@ import { Home } from "./pages/home";
 import injectContext from "./store/appContext";
 import { LearnMore } from "./pages/learnMore";
 
+import { Signup } from "./component/signup";
+import  Login  from "./component/login";
+
 import { Navbar } from "./component/navbar";
 import { Footer } from "./component/footer";
 import About from "./pages/about";
@@ -28,6 +31,9 @@ const Layout = () => {
                         <Route element={<Home />} path="/" />
                         <Route element={<About/>} path="/about/:type/:id"/>
                         <Route element={<LearnMore />} path="/learnMore/:type/:id"/>
+                        <Route element={<Signup />} path="/signup"/>
+                        <Route element={<Login />} path="/login"/>
+                    
                     </Routes>
                     <Footer />
                 </ScrollToTop>
